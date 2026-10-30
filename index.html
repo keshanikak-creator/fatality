@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FATALITY.WIN — CS2 2024 Legacy</title>
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --panel-bg: rgba(22, 24, 30, 0.75);
+            --accent-color: #00ffcc;
+            --accent-hover: #00ccaa;
+            --btn-main: #ffffff;
+            --btn-main-text: #000000;
+            --btn-sec: rgba(255, 255, 255, 0.05);
+            --btn-sec-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f5f6f9;
+            --text-muted: #8a8f9d;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: radial-gradient(circle at top, #141722 0%, var(--bg-color) 70%);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .navbar {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 25px 20px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-transform: lowercase;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 750px;
+            width: 100%;
+            padding: 20px 20px 100px 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin: 40px 0 10px 0;
+            background: linear-gradient(180deg, #ffffff 0%, #a2a8b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+
+        .guide-panel {
+            background: var(--panel-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--btn-sec-border);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: left;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .guide-panel h2 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        ol {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 16px;
+            line-height: 1.6;
+            color: #d1d5db;
+            font-size: 0.95rem;
+        }
+
+        code {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 4px 8px;
+            border-radius: 6px;
+            color: var(--accent-color);
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: inline-block;
+            margin-top: 4px;
+            word-break: break-all;
+        }
+
+        .highlight {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .action-zone {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .buttons-row {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .btn {
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            box-sizing: border-box;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-main {
+            background-color: var(--btn-main);
+            color: var(--btn-main-text);
+            padding: 14px 36px;
+            min-width: 170px;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-main:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-sec {
+            background-color: var(--btn-sec);
+            color: var(--text-main);
+            border: 1px solid var(--btn-sec-border);
+            padding: 14px 30px;
+        }
+
+        .btn-sec:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .sub-link {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .sub-link:hover {
+            color: var(--text-main);
+        }
+
+        @media (max-width: 600px) {
+            .main-title { font-size: 2.8rem; }
+            .buttons-row { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">fatality<span>.win</span></div>
+    </div>
+
+    <div class="container">
+        <h1 class="main-title">FATALITY.WIN</h1>
+        <div class="subtitle">Фри чит, без какой-либо оплаты</div>
+
+        <div class="guide-panel">
+            <h2>Инструкция по установке билда 2024 года</h2>
+            <ol>
+                <li>Нажмите сочетание клавиш <span class="highlight">Win+R</span>, введите <code>steam://open/console</code> и нажмите Enter. В консоли Steam поочередно выполните команды для скачивания:<br>
+                    <code>download_depot 730 2347771 8398760765729990373</code><br>
+                    Затен, когда скачается первая часть, введите вторую:<br>
+                    <code>download_depot 730 2347770 8987943224069546524</code>
+                </li>
+                <li>После завершения скачивания перейдите по следующему пути на ПК:<br>
+                    <code>C:\Program Files (x86)\Steam\steamapps\content\app_730</code>
+                </li>
+                <li>Откройте папку второго депота <code>depot_2347771</code> и скопируйте папку <code>game</code>.</li>
+                <li>Перейдите в папку первого депота <code>depot_2347770</code> и вставьте скопированную папку (согласитесь на замену файлов).</li>
+                <li>Создайте обычный ярлык для файла <code>cs2.exe</code> на рабочем столе. Путь до исходного файла:<br>
+                    <code>C:\Program Files (x86)\Steam\steamapps\content\app_730\depot_2347770\game\bin\win64\cs2.exe</code>
+                </li>
+                <li>Нажмите правой кнопкой мыши по созданному на рабочем столе ярлыку и выберите <span class="highlight">Свойства</span>.</li>
+                <li>Во вкладке «Ярлык» найдите строку <span class="highlight">Объект</span>, кликните в самый конец текста, поставьте один пробел и допишите параметр: <code>-insecure</code>, после чего нажмите Применить.</li>
+                <li>Запускайте измененный ярлык строго <span class="highlight">от имени администратора</span>.</li>
+                <li>В настройках графики CS2 выберите режим отображения: <span class="highlight">Полноэкранный в окне</span>.</li>
+                <li>Запустите Extreme Injector V3, выберите процесс CS2, выберите метод инжекта <span class="highlight">Standard injection</span> и добавьте DLL чита.</li>
+            </ol>
+        </div>
+
+        <div class="action-zone">
+            <div class="buttons-row">
+                <!-- В атрибут href вместо ССЫЛКА_НА_ЧИТ вставь свой URL -->
+                <a href="ССЫЛКА_НА_ЧИТ" class="btn btn-main">Скачать чит</a>
+                <!-- В атрибут href вместо ССЫЛКА_НА_КФГ вставь свой URL -->
+                <a href="ССЫЛКА_НА_КФГ" class="btn btn-sec">КФГ от кодера</a>
+            </div>
+            <!-- В атрибут href вместо ССЫЛКА_НА_ИНЖЕКТОР вставь свой URL -->
+            <a href="ССЫЛКА_НА_ИНЖЕКТОР" class="sub-link">Скачать Extreme Injector V3</a>
+        </div>
+    </div>
+
+    <!-- Скрипт автоматической конфигурации ссылок -->
+    <script>
+        // Вставь свои ссылки между кавычками ниже:
+        const ССЫЛКА_НА_ЧИТ = "https://example.com"; 
+        const ССЫЛКА_НА_КФГ = "https://example.com";
+        const ССЫЛКА_НА_ИНЖЕКТОР = "https://example.com";
+
+        // Этот блок сам подставит ссылки в кнопки при загрузке страницы
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector(".btn-main").href = ССЫЛКА_НА_ЧИТ;
+            document.querySelector(".btn-sec").href = ССЫЛКА_НА_КФГ;
+            document.querySelector(".sub-link").href = ССЫЛКА_НА_ИНЖЕКТОР;
+        });
+    </script>
+</body>
+</html>
